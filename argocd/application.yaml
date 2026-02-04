@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: soap-service
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/YOUR_GITHUB_USERNAME/soap-microservice.git
+    targetRevision: main
+    path: helm/soap-service
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: soap-service
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
