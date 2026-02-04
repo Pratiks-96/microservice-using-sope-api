@@ -1,0 +1,5 @@
+apiVersion: v2
+name: soap-service
+version: 0.1.0
+description: SOAP Microservice Helm Chart
+appVersion: "1.0.0"
